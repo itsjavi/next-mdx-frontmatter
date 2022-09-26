@@ -64,7 +64,7 @@ const MatterPage = ({ meta, children }: { meta: Partial<PageProps>; children: Re
         <article className="prose lg:prose-xl">
           <h6>Metadata</h6>
           <Table columns={Object.keys(meta)}>{[Object.values(meta)]}</Table>
-          {children}
+          {children} {/* this is the actual original markdown content */}
         </article>
       </MainContent>
     </MainLayout>
