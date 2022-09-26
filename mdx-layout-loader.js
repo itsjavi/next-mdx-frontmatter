@@ -9,7 +9,7 @@ const mdxLayoutLoader = function (source) {
 
   const preparedSource = `
 
-import ${options.layout.component} from '${options.layout.module}'
+import { ${options.layout.component} } from '${options.layout.module}'
 
 export const __frontMatter = JSON.parse('${JSON.stringify(data)}');
 
