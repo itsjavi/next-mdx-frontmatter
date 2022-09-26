@@ -11,11 +11,11 @@ Supports NextJS 12 and MDX 2.0
 ## Usage
 
 ```bash
-npm i @itsjavi/next-mdx-frontmatter
+npm i itsjavi/next-mdx-frontmatter
 
 # or
 
-yarn add @itsjavi/next-mdx-frontmatter
+yarn add itsjavi/next-mdx-frontmatter
 ```
 
 
