@@ -3,7 +3,7 @@
 **Next.js + MDX + FrontMatter + Layouts**!
 
 Custom [@next/mdx](https://nextjs.org/docs/advanced-features/using-mdx) plugin 
-with [FrontMatter](https://frontmatter.codes/) and layout component support.
+with [FrontMatter](https://frontmatter.codes/) metadata and layout component support.
 
 Supports NextJS 12 and MDX 2.0
 
