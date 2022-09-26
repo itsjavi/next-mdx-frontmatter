@@ -1,2 +1,76 @@
 # next-mdx-frontmatter
-Custom @next/mdx with FrontMatter and page layouts support. Next.js + MDX + FrontMatter. 
+
+**Next.js + MDX + FrontMatter + Layouts**!
+
+Custom [@next/mdx](https://nextjs.org/docs/advanced-features/using-mdx) plugin 
+with [FrontMatter](https://frontmatter.codes/) and layout component support. 
+
+
+## Usage
+
+```bash
+npm i @itsjavi/next-mdx-frontmatter
+
+# or
+
+yarn add @itsjavi/next-mdx-frontmatter
+```
+
+
+```js
+// next-config.js
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+  pageExtensions: ["ts", "tsx", "mdx"]
+}
+
+const withFrontMatterMDX = require("./plugins/next-frontmatter-mdx")({
+  extension: /\.(md|mdx)$/,
+  options: {
+    // these options directly gets passed to `@mdx-js/loader`
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+  layout: {
+    // example
+    module: "@components/layouts/MatterPage",
+    component: "MatterPage",
+    frontMatterProp: "metadata",
+  },
+})
+
+module.exports = withFrontMatterMDX(nextConfig)
+
+```
+
+With this setup, you only need to add your pages as `.mdx` files under your `/pages` directory and it is highly flexible thanks
+to the FrontMatter metadata passed to the layout. For example, you can load special styles depending on the content type of your page.
+
+Example layout:
+
+```tsx
+import React from "react"
+import Table from "../Table"
+import MainContent from "./MainContent"
+import MainLayout from "./MainLayout"
+import { PageProps } from "./ContentTypes"
+
+const MatterPage = ({ meta, children }: { meta: Partial<PageProps>; children: React.ReactNode }) => {
+  // if meta.contentType == "post", you could return another different layout here.
+  return (
+    <MainLayout>
+      <MainContent spacing="simple">
+        <article className="prose lg:prose-xl">
+          <h6>Metadata</h6>
+          <Table columns={Object.keys(meta)}>{[Object.values(meta)]}</Table>
+          {children}
+        </article>
+      </MainContent>
+    </MainLayout>
+  )
+}
+
+export default MatterPage
+
+```
