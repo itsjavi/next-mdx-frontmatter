@@ -58,7 +58,7 @@ import MainContent from "./MainContent"
 import MainLayout from "./MainLayout"
 import { PageProps } from "./ContentTypes"
 
-const MatterPage = ({ meta, children }: { meta: Partial<PageProps>; children: React.ReactNode }) => {
+export const MatterPage = ({ meta, children }: { meta: Partial<PageProps>; children: React.ReactNode }) => {
   // if meta.contentType == "post", you could return another different layout here.
   return (
     <MainLayout>
@@ -72,7 +72,5 @@ const MatterPage = ({ meta, children }: { meta: Partial<PageProps>; children: Re
     </MainLayout>
   )
 }
-
-export default MatterPage
 
 ```
