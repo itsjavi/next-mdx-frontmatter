@@ -53,7 +53,6 @@ Example layout:
 
 ```tsx
 import React from "react"
-import Table from "../Table"
 import MainContent from "./MainContent"
 import MainLayout from "./MainLayout"
 import { PageProps } from "./ContentTypes"
@@ -64,9 +63,8 @@ export const MatterPage = ({ meta, children }: { meta: Partial<PageProps>; child
     <MainLayout>
       <MainContent spacing="simple">
         <article className="prose lg:prose-xl">
-          <h6>Metadata</h6>
-          <Table columns={Object.keys(meta)}>{[Object.values(meta)]}</Table>
-          {children} {/* this is the markdown content */}
+          <h2>{meta.title}</h2>
+          {children}
         </article>
       </MainContent>
     </MainLayout>
