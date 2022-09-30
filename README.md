@@ -66,7 +66,7 @@ export const MatterPage = ({ meta, children }: { meta: Partial<PageProps>; child
         <article className="prose lg:prose-xl">
           <h6>Metadata</h6>
           <Table columns={Object.keys(meta)}>{[Object.values(meta)]}</Table>
-          {children} {/* this is the actual original markdown content */}
+          {children} {/* this is the markdown content */}
         </article>
       </MainContent>
     </MainLayout>
