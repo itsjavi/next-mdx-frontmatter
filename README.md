@@ -52,6 +52,8 @@ to the FrontMatter metadata passed to the layout. For example, you can load spec
 Example layout:
 
 ```tsx
+// ./components/layouts/MatterPage.tsx
+
 import React from "react"
 import MainContent from "./MainContent"
 import MainLayout from "./MainLayout"
