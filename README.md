@@ -57,7 +57,9 @@ import MainContent from "./MainContent"
 import MainLayout from "./MainLayout"
 import { PageMetadata } from "./ContentTypes"
 
-export const MatterPage = ({ meta, children }: { meta: Partial<PageMetadata>; children: React.ReactNode }) => {
+export const MatterPage = (
+  { meta, children }: { meta: Partial<PageMetadata>; children: React.ReactNode }
+) => {
   // if meta.contentType == "post", you could return another different layout here.
   return (
     <MainLayout>
